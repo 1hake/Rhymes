@@ -1,5 +1,5 @@
-LiveScanSimulator
+Rhymes
 
-Generate Tracability Reader Webapp
+Auto detect french rhymes on input text
 
 
