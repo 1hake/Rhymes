@@ -42,8 +42,8 @@ const style = {
 		alignItems: 'center',
 		justifyContent: 'space-evenly',
 		backgroundColor: 'white',
-		padding: '6px',
-		borderRadius: '25%',
+		padding: '10px',
+		borderRadius: '25px',
 		marginLeft: '5px',
 		boxShadow: '-1px 17px 43px -13px rgba(0,0,0,0.75)'
 	},
@@ -56,7 +56,9 @@ const style = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		boxShadow: '-1px 17px 43px -13px rgba(0,0,0,0.75)'
+		boxShadow: '-1px 17px 43px -13px rgba(0,0,0,0.75)',
+
+		fontWeight: 'bold'
 	}
 };
 

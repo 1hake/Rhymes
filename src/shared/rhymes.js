@@ -1,3 +1,5 @@
+import { rhymeTabs } from './rhymeTab';
+
 export function getList(sentence) {
 	var words = sentence.split(' ');
 	var finalList = [];
@@ -6,9 +8,10 @@ export function getList(sentence) {
 		var currentList = [];
 		for (var i = 0; i < splitted.length; i++) {
 			if (isVo(splitted[i])) {
-				if (matcher(word.substring(i))) {
-					currentList.push(matcher(word.substring(i)));
-					i = i + matcher(word.substring(i)).length;
+				var match = tabMatcher(word.substring(i), word);
+				if (match) {
+					currentList.push(match);
+					i = i + match.length;
 				}
 			}
 		}
@@ -16,6 +19,45 @@ export function getList(sentence) {
 	});
 	console.log(finalList);
 	return finalList;
+}
+
+function applyRule(patternObject, word, realWord) {
+	console.log('ruleApply', realWord);
+	switch (patternObject.rule) {
+		case 'isLast':
+			if (word.length === patternObject.pattern.length) {
+				if (realWord.length === 2) {
+					return patternObject.sound;
+				}
+				return false;
+			}
+			return false;
+		case 'EM_Followed':
+			if (word.substring(2)[0]) {
+			}
+		default:
+			return patternObject.sound;
+	}
+}
+
+function tabMatcher(word, realWord) {
+	if (rhymeTabs[word[0]]) {
+		const patternObject = rhymeTabs[word[0]].filter((rhyme) => {
+			return word.substring(0, rhyme.pattern.length).includes(rhyme.pattern) && rhyme.pattern;
+		});
+		console.log('prout', patternObject);
+		if (patternObject.length === 1) {
+			return patternObject[0].rule ? applyRule(patternObject[0], word, realWord) : patternObject[0].sound;
+		} else if (patternObject.length === 2) {
+			const final = patternObject.filter((current) => {
+				if (!isVo(current.pattern)) {
+					return current;
+				}
+			});
+			console.log('final', final);
+			return applyRule(final[0], word, realWord);
+		} else return word[0];
+	} else return false;
 }
 
 function matcher(sentence) {
@@ -50,6 +92,8 @@ function matcher(sentence) {
 			return 'ez';
 		} else if (sentence.substring(0, 2).includes('es')) {
 			return 'es';
+		} else if (sentence.substring(0, 2).includes('et')) {
+			return 'et';
 		} else if (sentence.substring(0, 3).includes('ein')) {
 			return 'ein';
 		} else if (sentence.substring(0, 3).includes('est')) {
@@ -89,6 +133,8 @@ function matcher(sentence) {
 		return 'é';
 	} else if (sentence.substring(0, 1).includes('è')) {
 		return 'è';
+	} else if (sentence.substring(0, 1).includes('y')) {
+		return 'y';
 	} else {
 		return false;
 	}
