@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import MyInput from './MyInput';
 import RhymeList from './RhymeList';
+import WordList from './WordList';
 
 class Main extends Component {
 	render() {
@@ -10,6 +11,7 @@ class Main extends Component {
 		return (
 			<div className={classes.root}>
 				<MyInput />
+				{/* <WordList /> */}
 				<RhymeList />
 			</div>
 		);

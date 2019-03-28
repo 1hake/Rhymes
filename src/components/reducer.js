@@ -8,7 +8,8 @@ import createLogger from 'redux-logger';
 function reducer(
 	state = {
 		currentSentence: '',
-		transformedSentence: []
+		transformedSentence: [],
+		currentWordList: []
 	},
 	action
 ) {
@@ -21,7 +22,8 @@ function reducer(
 		case ACTIONS.STORE_SENTENCE:
 			return {
 				...state,
-				currentSentence: action.data
+				currentSentence: action.data,
+				currentWordList: action.data.replace(/'|-/gi, ' ').split(' ')
 			};
 		case ACTIONS.DO_NOTHING:
 			return {

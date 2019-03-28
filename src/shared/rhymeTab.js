@@ -2,7 +2,7 @@ export const rhymeTabs = {
 	a: [
 		{
 			pattern: 'an',
-			sound: 'en',
+			sound: 'a',
 			rule: 'isNotVoAfter'
 		},
 		{
@@ -12,8 +12,8 @@ export const rhymeTabs = {
 		},
 		{
 			pattern: 'am',
-			sound: 'en',
-			rule: false
+			sound: 'a',
+			rule: 'EM_Followed'
 		},
 		{
 			pattern: 'ain',
@@ -47,7 +47,7 @@ export const rhymeTabs = {
 		{
 			pattern: 'en',
 			sound: 'en',
-			rule: false
+			rule: 'pluralVerb'
 		},
 
 		{
@@ -58,8 +58,8 @@ export const rhymeTabs = {
 
 		{
 			pattern: 'em',
-			sound: 'en',
-			rule: 'isFollowedby:b,p,t'
+			sound: 'ei',
+			rule: 'EM_Followed'
 		},
 
 		{
@@ -77,21 +77,18 @@ export const rhymeTabs = {
 		{
 			pattern: 'es',
 			sound: 'ai',
-			rule: false
+			rule: 'ES_isLast'
 		},
-
 		{
 			pattern: 'et',
 			sound: 'ai',
 			rule: false
 		},
-
 		{
 			pattern: 'ein',
 			sound: 'in',
 			rule: false
 		},
-
 		{
 			pattern: 'est',
 			sound: 'ai',
@@ -118,6 +115,11 @@ export const rhymeTabs = {
 			pattern: 'ien',
 			sound: 'in',
 			rule: false
+		},
+		{
+			pattern: 'ier',
+			sound: 'ai',
+			rule: false
 		}
 	],
 	o: [
@@ -139,6 +141,11 @@ export const rhymeTabs = {
 		{
 			pattern: 'oin',
 			sound: 'oin',
+			rule: false
+		},
+		{
+			pattern: 'oui',
+			sound: 'ou',
 			rule: false
 		}
 	],
@@ -162,7 +169,46 @@ export const rhymeTabs = {
 			pattern: 'uo',
 			sound: 'o',
 			rule: false
+		},
+		{
+			pattern: 'un',
+			sound: 'in',
+			rule: false
 		}
 	],
-	y: []
+	y: [
+		{
+			pattern: 'y',
+			sound: 'i',
+			rule: false
+		}
+	],
+	ê: [
+		{
+			pattern: 'ê',
+			sound: 'ei',
+			rule: false
+		}
+	],
+	è: [
+		{
+			pattern: 'è',
+			sound: 'ei',
+			rule: false
+		}
+	],
+	é: [
+		{
+			pattern: 'é',
+			sound: 'ai',
+			rule: false
+		}
+	],
+	à: [
+		{
+			pattern: 'à',
+			sound: 'a',
+			rule: false
+		}
+	]
 };
