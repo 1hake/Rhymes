@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import MyInput from './MyInput';
 import RhymeList from './RhymeList';
 import WordList from './WordList';
+import WhiteSpace from './WhiteSpace';
 
 class Main extends Component {
 	render() {
 		const { classes } = this.props;
 		return (
 			<div className={classes.root}>
+				<WhiteSpace />
+				<WhiteSpace />
 				<MyInput />
 				{/* <WordList /> */}
 				<RhymeList />
@@ -24,7 +27,7 @@ const style = {
 		backgroundColor: '#3f51b5',
 		display: 'flex',
 		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'flex-start',
 		flexDirection: 'column'
 	}
 };

@@ -33,7 +33,7 @@ const style = {
 		color: 'white',
 		fontFamily: 'Montserrat',
 		fontWeight: 'bold',
-		fontSize: '1.9em'
+		fontSize: '1.8em'
 	},
 	root: {
 		height: '100vh',

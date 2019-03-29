@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { Slide, Grow } from '@material-ui/core';
+import { rhymeColorMatch } from '../constants/rhymeColorMatch';
 
 class RhymeList extends Component {
 	render() {
@@ -24,7 +25,12 @@ class RhymeList extends Component {
 										{word.map((cb, index) => {
 											return (
 												<Slide key={index} in={true} direction={'up'}>
-													<div className={classes.item}>{cb}</div>
+													<div
+														style={{ backgroundColor: rhymeColorMatch[cb] }}
+														className={classes.item}
+													>
+														{cb}
+													</div>
 												</Slide>
 											);
 										})}
@@ -44,6 +50,7 @@ const style = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'flex-start',
+		flexWrap: 'wrap',
 		width: '83%'
 	},
 	word: {
@@ -54,12 +61,12 @@ const style = {
 		padding: '10px',
 		borderRadius: '25px',
 		marginLeft: '5px',
+		marginTop: '5px',
 		boxShadow: '-1px 17px 43px -13px rgba(0,0,0,0.75)'
 	},
 	item: {
 		height: '30px',
 		width: '30px',
-		backgroundColor: '#3f51b5',
 		color: 'white',
 		borderRadius: '50%',
 		display: 'flex',
@@ -71,6 +78,11 @@ const style = {
 	wordContainer: {
 		display: 'flex',
 		flexDirection: 'column'
+	},
+	text: {
+		fontFamily: 'Montserrat',
+		fontWeight: 'bold',
+		fontSize: '1.5em'
 	}
 };
 

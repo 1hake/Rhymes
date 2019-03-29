@@ -29,6 +29,11 @@ export const rhymeTabs = {
 			pattern: 'a',
 			sound: 'a',
 			rule: false
+		},
+		{
+			pattern: 'ay',
+			sound: 'ai',
+			rule: false
 		}
 	],
 	e: [
@@ -208,6 +213,20 @@ export const rhymeTabs = {
 		{
 			pattern: 'à',
 			sound: 'a',
+			rule: false
+		}
+	],
+	â: [
+		{
+			pattern: 'â',
+			sound: 'a',
+			rule: false
+		}
+	],
+	ô: [
+		{
+			pattern: 'ô',
+			sound: 'o',
 			rule: false
 		}
 	]
